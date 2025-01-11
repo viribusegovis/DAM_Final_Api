@@ -72,14 +72,13 @@ target/
 .ipynb_checkpoints
 
 # pyenv
-.python-version
-
+.python-versio
 # celery beat schedule file
 celerybeat-schedule
 
 # dotenv
 .env
-
+.idea
 # virtualenv
 venv/
 ENV/
