@@ -9,8 +9,8 @@ load_dotenv()
 class Settings(BaseSettings):
     SERVER: str = os.getenv("DB_SERVER")
     DATABASE: str = os.getenv("DB_NAME")
-    USERNAME: str = os.getenv("DB_USERNAME")
-    PASSWORD: str = os.getenv("DB_PASSWORD")
+    DB_USERNAME: str = os.getenv("DB_USERNAME")
+    DB_PASSWORD: str = os.getenv("DB_PASSWORD")
     DRIVER: str = "{ODBC Driver 18 for SQL Server}"
 
 
