@@ -1,19 +1,20 @@
 import urllib.parse
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 
 from config import settings
-from models import Base
+from models import Base, User, Recipe
+from schemas import (UserCreate, UserResponse, RecipeCreate, RecipeResponse)
 
 # Database connection setup
 connection_string = (
     f"Driver={settings.DRIVER};"
     f"Server=tcp:{settings.SERVER},1433;"
     f"Database={settings.DATABASE};"
-    f"Uid={settings.USERNAME};"
-    f"Pwd={settings.PASSWORD};"
+    f"Uid={settings.DB_USERNAME};"
+    f"Pwd={settings.DB_PASSWORD};"
     f"Encrypt=yes;"
     f"TrustServerCertificate=no;"
     f"Connection Timeout=30;"
